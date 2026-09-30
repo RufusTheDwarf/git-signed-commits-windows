@@ -1,0 +1,20 @@
+# SSH keys (must NEVER be committed)
+*.pem
+id_*
+*.pub
+!LICENSE
+
+# Local config files
+.env
+.env.*
+*.local
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
