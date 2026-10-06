@@ -33,8 +33,8 @@ This guide walks you through configuring **Git on Windows** to automatically sig
 
 | Feature | Description |
 |---|---|
-| 🔑 **Dedicated signing key** | A separate ed25519 key used only for signing — your authentication keys stay untouched. |
-| 🤖 **Automatic signing** | Every commit is signed automatically — no extra flag needed. |
+| 🔑 **Dedicated signing key** | A separate ed25519 key used only for signing // your authentication keys stay untouched. |
+| 🤖 **Automatic signing** | Every commit is signed automatically // no extra flag needed. |
 | ✅ **Verified badge** | GitHub recognizes your signature and shows the green checkmark. |
 | 🛡️ **Secure** | The `.ssh` folder is hidden and its permissions are locked down. |
 | 🖥️ **Works everywhere** | Git Bash, PowerShell, VS Code, and GitHub Desktop all respect the config. |
@@ -85,7 +85,7 @@ Then [add the public key to GitHub](#step-6--add-the-public-key-to-github) and [
 
 ---
 
-### Step 1 — Check your environment
+### Step 1 // Check your environment
 
 Open **Git Bash** and run:
 
@@ -114,7 +114,7 @@ git config --global user.email
 
 ---
 
-### Step 2 — Create the `.ssh` folder in your user profile
+### Step 2 // Create the `.ssh` folder in your user profile
 
 On Windows, your home folder is `C:\Users\<YOUR_USERNAME>`.  
 In Git Bash, `~` might point elsewhere (e.g. `H:\`). **Always use the full path** to avoid confusion.
@@ -135,7 +135,7 @@ ls -la /c/Users/$USERNAME/.ssh
 
 ---
 
-### Step 3 — Generate the signing key
+### Step 3 // Generate the signing key
 
 We create an **ed25519** key dedicated to signing, with an explicit name.
 
@@ -156,7 +156,7 @@ ssh-keygen -t ed25519 -C "your.email@example.com" -f /c/Users/$USERNAME/.ssh/id_
 
 ---
 
-### Step 4 — Configure Git for SSH signing
+### Step 4 // Configure Git for SSH signing
 
 ```bash
 git config --global gpg.format ssh
@@ -170,7 +170,7 @@ git config --global commit.gpgsign true
 
 ---
 
-### Step 5 — Create the `allowed_signers` file
+### Step 5 // Create the `allowed_signers` file
 
 This file lets Git verify signatures locally.
 
@@ -181,7 +181,7 @@ git config --global gpg.ssh.allowedSignersFile C:/Users/$USERNAME/.ssh/allowed_s
 
 ---
 
-### Step 6 — Add the public key to GitHub
+### Step 6 // Add the public key to GitHub
 
 Display your public key:
 
@@ -204,7 +204,7 @@ On GitHub:
 
 ---
 
-### Step 7 — Test the signature locally
+### Step 7 // Test the signature locally
 
 Create a test repository:
 
@@ -233,7 +233,7 @@ If you see an error `gpg.ssh.allowedSignersFile needs to be configured`, re-run 
 
 ---
 
-### Step 8 — Push to GitHub and verify the "Verified" badge
+### Step 8 // Push to GitHub and verify the "Verified" badge
 
 1. Create an **empty** repository on GitHub (no README, no .gitignore).
 2. In Git Bash, inside the `git-signing-test` folder:
@@ -252,7 +252,7 @@ Authenticate (Git Credential Manager or personal access token).
 
 ---
 
-### Step 9 — Secure the `.ssh` folder (hidden + permissions)
+### Step 9 // Secure the `.ssh` folder (hidden + permissions)
 
 On Windows, the `.ssh` folder is not hidden by default. You can make it invisible and restrict access to your user account only.
 
@@ -339,10 +339,10 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## 🙏 References
 
-- [Git documentation — SSH signing](https://git-scm.com/docs/git-config#Documentation/git-config.txt-gpgformat)
-- [GitHub Docs — About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
-- [GitHub Docs — Telling Git about your signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
-- [Shields.io — Badge generator](https://shields.io)
+- [Git documentation // SSH signing](https://git-scm.com/docs/git-config#Documentation/git-config.txt-gpgformat)
+- [GitHub Docs // About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+- [GitHub Docs // Telling Git about your signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+- [Shields.io // Badge generator](https://shields.io)
 
 ---
 
