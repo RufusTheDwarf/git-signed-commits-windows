@@ -61,6 +61,8 @@ git config --global commit.gpgsign true
 # 4. Create the allowed_signers file
 echo "your.email@example.com $(cat /c/Users/$USERNAME/.ssh/id_ed25519_signing.pub)" > /c/Users/$USERNAME/.ssh/allowed_signers
 git config --global gpg.ssh.allowedSignersFile C:/Users/$USERNAME/.ssh/allowed_signers
+
+cat /c/Users/$USERNAME/.ssh/id_ed25519_signing.pub
 ```
 
 Then [add the public key to GitHub](#step-6--add-the-public-key-to-github) and [test the signature](#step-7--test-the-signature-locally).
